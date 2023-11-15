@@ -16,7 +16,7 @@ final PersegiController _persegiController = Get.put(PersegiController());
       body: Column(
         children: [
           Image.asset(
-            "assets/persegi.jpg",
+            "assets/kotak.png",
             height: 150,
           ),
          Text("Persegi",style: TextStyle(color: Colors.white),
@@ -51,19 +51,21 @@ final PersegiController _persegiController = Get.put(PersegiController());
     ),
           ),
           Center(
-            child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    primary: Colors.blue,
-                    padding: EdgeInsets.symmetric(horizontal: 25, vertical: 15),
-                    textStyle: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold)),
-                onPressed: (){
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      primary: Colors.blue,
+                      padding: EdgeInsets.symmetric(horizontal: 25, vertical: 15),
+                      textStyle: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold)),
+                  onPressed: (){
 
-              _persegiController.hitungLuas();
-            }, child: Text("Hitung Luas")),
+                _persegiController.hitungLuas();
+              }, child: Text("Hitung Luas")),
+            ),
           ),
-          Obx(() => Text(_persegiController.hasilluas.value)),
           Center(
             child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
@@ -75,7 +77,12 @@ final PersegiController _persegiController = Get.put(PersegiController());
               _persegiController.hitungKeliling();
             }, child: Text("Hitung Keliling")),
           ),
-          Obx(() => Text(_persegiController.hasil.value))
+          Obx(() => Text(_persegiController.hasil.value,
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: Colors.deepOrangeAccent
+          ),))
         ],
       ),
     );

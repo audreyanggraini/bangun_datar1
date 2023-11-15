@@ -1,4 +1,7 @@
+import 'package:bangun_datar_app/pages/Jajargenjang.dart';
 import 'package:bangun_datar_app/pages/Persegi.dart';
+import 'package:bangun_datar_app/pages/PersegiPanjang.dart';
+import 'package:bangun_datar_app/pages/Segitiga.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -21,14 +24,42 @@ class HomePage extends StatelessWidget {
           onTap:(){
           Navigator.push(context, MaterialPageRoute(builder: (context)=> PersegiPage()));
     },
-          child: CustomMenu(imageAssets: "assets/persegi.jpg", title: "Persegi")),
+          child: CustomMenu(imageAssets: "assets/kotak.png", title: "Persegi")),
+          InkWell(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => PersegiPanjangPage()));
+              },
+              child: CustomMenu(
+                imageAssets: "assets/persegi.jpg",
+                title: "persegi panjang",
+              )),
+          InkWell(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => segitigapage()));
+              },
+              child: CustomMenu(
+                imageAssets: "assets/segitiga1.png",
+                title: "Segitiga",
+              )),
+          InkWell(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => JajargenjangPage()));
+              },
+              child: CustomMenu(
+                imageAssets: "assets/jajargenjang.png",
+                title: "Jajargenjang",
+              )),
           Row(
             children: [
-          Expanded(child: CustomMenu(imageAssets: "assets/segitiga1.png", title: "segitiga")),
+
+          const Expanded(child: CustomMenu(imageAssets: "assets/segitiga1.png", title: "segitiga")),
           Expanded(child: CustomMenu(imageAssets: "assets/segitiga1.png", title: "segitiga")),
 
         ],
-    )
+    ),
     ],
       ),
     );
